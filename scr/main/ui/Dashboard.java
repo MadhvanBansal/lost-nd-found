@@ -47,10 +47,6 @@ public class Dashboard {
 
         // Navigation Buttons
         sidebar.add(createSidebarBtn("Dashboard", true));
-        sidebar.add(Box.createVerticalStrut(10));
-        sidebar.add(createSidebarBtn("Records", false));
-        sidebar.add(Box.createVerticalStrut(10));
-        sidebar.add(createSidebarBtn("Settings", false));
         
         sidebar.add(Box.createVerticalGlue());
         
