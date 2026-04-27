@@ -34,13 +34,17 @@ If you want to run this project on your own machine, follow these simple steps:
    ```bash
    cd lost-nd-found
    ```
-3. **Compile the Java files:**
+3. **Download SQLite Database Driver:**
    ```bash
-   javac scr/main/MainApp.java
+   mkdir -p lib && curl -L "https://github.com/xerial/sqlite-jdbc/releases/download/3.41.2.1/sqlite-jdbc-3.41.2.1.jar" -o lib/sqlite-jdbc-3.41.2.1.jar
    ```
-4. **Run the Application:**
+4. **Compile the Java files:**
    ```bash
-   java scr.main.MainApp
+   javac -cp ".:lib/sqlite-jdbc-3.41.2.1.jar" $(find scr -name "*.java")
+   ```
+5. **Run the Application:**
+   ```bash
+   java -cp ".:lib/sqlite-jdbc-3.41.2.1.jar" scr.main.MainApp
    ```
 
 ## 🎨 A Note on Design
