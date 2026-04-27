@@ -1,5 +1,7 @@
 package scr.main.ui;
 
+
+import scr.main.ui.*;
 import javax.swing.*;
 import java.awt.*;
 
@@ -7,7 +9,7 @@ public class MainWindow {
     private JFrame frame;
     private JPanel cardPanel;
     private CardLayout cardLayout;
-    private Dashboard dashboardPanel; 
+    private Dashboard dashboardPanel;
 
     public void createUI() {
         frame = new JFrame("Lost & Found System - Professional Edition");
@@ -15,14 +17,17 @@ public class MainWindow {
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        try { UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); } catch (Exception e) {}
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+        }
 
         cardLayout = new CardLayout();
         cardPanel = new JPanel(cardLayout);
 
         LoginPage loginPage = new LoginPage(this);
         cardPanel.add(loginPage.getPanel(), "Login");
-        
+
         RegisterPage registerPage = new RegisterPage(this);
         cardPanel.add(registerPage.getPanel(), "Register");
 
@@ -63,5 +68,7 @@ public class MainWindow {
         cardLayout.show(cardPanel, "Register");
     }
 
-    public JFrame getFrame() { return frame; }
+    public JFrame getFrame() {
+        return frame;
+    }
 }
